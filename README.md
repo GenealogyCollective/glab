@@ -57,9 +57,11 @@ The `jlpm` command is JupyterLab's pinned version of
 # Move to glab directory
 
 # Install server extension
-pip install -e .
+pip install -e . --prefix=~/.local/
 # Register server extension
-jupyter serverextension enable --py glab --sys-prefix
+jupyter serverextension enable --py glab --user
+# Check to see if it is installed:
+jupyter serverextension list
 
 # Install dependencies
 jlpm
@@ -67,6 +69,9 @@ jlpm
 jlpm build
 # Link your development version of the extension with JupyterLab
 jupyter labextension install .
+# Check to see if it is installed:
+jupyter labextension list
+
 # Rebuild Typescript source after making changes
 jlpm build
 # Rebuild JupyterLab after making any changes
