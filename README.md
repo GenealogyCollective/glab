@@ -1,8 +1,6 @@
 # glab
 
-![Github Actions Status](https://github.com/GenealogyCollective/glab/workflows/Build/badge.svg)
-
-An online genealogy program built from Jupyter and Gramps
+An online genealogy program built on top of Jupyter and Gramps.
 
 
 This extension is composed of a Python package named `glab`
