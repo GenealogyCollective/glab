@@ -1,5 +1,5 @@
 {
-  "name": "glab",
+  "name": "@gcollective/glab",
   "version": "0.1.0",
   "description": "An online genealogy program built from Jupyter and Gramps",
   "keywords": [
@@ -22,9 +22,9 @@
   "style": "style/index.css",
   "repository": {
     "type": "git",
-    "url": "https://github.com/GenealogyCollective/glab.git"
+    "url": "git+https://github.com/GenealogyCollective/glab.git"
   },
-  "scripts": { 
+  "scripts": {
     "build": "jlpm run build:lib",
     "build:labextension": "cd glab && rimraf labextension && mkdirp labextension && cd labextension && npm pack ../..",
     "build:lib": "tsc",
@@ -33,7 +33,6 @@
     "clean:lib": "rimraf lib tsconfig.tsbuildinfo",
     "clean:labextension": "rimraf glab/labextension",
     "clean:all": "jlpm run clean:lib && jlpm run clean:labextension",
-
     "eslint": "eslint . --ext .ts,.tsx --fix",
     "eslint:check": "eslint . --ext .ts,.tsx",
     "prepare": "jlpm run clean && jlpm run build",
@@ -50,8 +49,8 @@
     "@typescript-eslint/parser": "^2.25.0",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.10.1",
-    "eslint-plugin-prettier": "^3.1.2", 
-    "mkdirp": "^1.0.3", 
+    "eslint-plugin-prettier": "^3.1.2",
+    "mkdirp": "^1.0.3",
     "prettier": "1.16.4",
     "rimraf": "^2.6.1",
     "typescript": "~3.7.0"
@@ -60,17 +59,20 @@
     "style/*.css",
     "style/*.svg"
   ],
-  "jupyterlab": { 
+  "jupyterlab": {
     "discovery": {
-        "server": {
-          "managers": [
-            "pip"
-          ],
-          "base": {
-            "name": "glab"
-          }
+      "server": {
+        "managers": [
+          "pip"
+        ],
+        "base": {
+          "name": "glab"
         }
-    }, 
+      }
+    },
     "extension": true
+  },
+  "directories": {
+    "lib": "lib"
   }
 }
